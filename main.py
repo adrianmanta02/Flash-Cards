@@ -1,12 +1,18 @@
 from tkinter import * 
 import pandas
 import random
-
+import os
 # ----------------------------------- CONSTANT VARIABLES ----------------------------------- 
-CARD_BACK = "C:\\Users\\Adrian\\Desktop\\vsc\\PYTHON\\day-30-flashcards\\card_back.png"
-CARD_FRONT = "C:\\Users\\Adrian\\Desktop\\vsc\\PYTHON\\day-30-flashcards\\card_front.png"
-RIGHT = "C:\\Users\\Adrian\\Desktop\\vsc\\PYTHON\\day-30-flashcards\\right.png"
-WRONG = "C:\\Users\\Adrian\\Desktop\\vsc\\PYTHON\\day-30-flashcards\\wrong.png"
+
+# Obtain the directory path in which the script is
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Defining relative paths
+CARD_BACK = os.path.join(BASE_DIR, "card_back.png")
+CARD_FRONT = os.path.join(BASE_DIR, "card_front.png")
+RIGHT = os.path.join(BASE_DIR, "right.png")
+WRONG = os.path.join(BASE_DIR, "wrong.png")
+
 BACKGROUND_COLOR = "#aeb9e6"
 CARD_COLOR_BACK = "#91c2af"
 TOTAL_WORDS = 101
@@ -32,10 +38,10 @@ canvas_front.place(x = 60, y = 95)
 #  ----------------------------------- STARTING VALUES  -----------------------------------
 already_guessed = []
 random_number = random.randint(0, 100)
-dict = None  # Vom inițializa acest dicționar în main()
-image_right = None  # Vom inițializa aceste imagini în buttons()
+dict = None  # it will be initialized in main()
+image_right = None  # initialized in buttons()
 image_wrong = None
-label_language = None  # Vom inițializa aceste etichete în labels()
+label_language = None  # initialized in labels()
 label_word = None
 
 #  ----------------------------------- FUNCTIONS ------------------------------------------
@@ -120,4 +126,3 @@ def main():
 
 main()
 window.mainloop()
-# WAZAAAAAAAAAAAAAAAAAP
